@@ -83,13 +83,10 @@ class DeletePlayerButton extends StatelessWidget {
   }
 
   void _deletePlayer(BuildContext context) {
-    // Delete player from service
     PlayerService().deletePlayer(player.id);
 
-    // Close confirmation dialog
     Navigator.of(context).pop();
 
-    // Show success message
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text('${player.nickname} has been deleted'),

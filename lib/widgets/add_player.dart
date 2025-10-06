@@ -31,7 +31,6 @@ class AddPlayerButton extends StatelessWidget {
         ),
       );
     } else {
-      // Regular Elevated Button variant
       return ElevatedButton.icon(
         onPressed: onPressed,
         icon: showIcon ? Icon(icon ?? Icons.add) : const SizedBox.shrink(),

@@ -28,7 +28,6 @@ class UpdatePlayerButton extends StatelessWidget {
 
   void _updatePlayer(BuildContext context) {
     if (formKey.currentState!.validate()) {
-      // Create updated player with same ID and creation date
       final updatedPlayer = Player(
         id: originalPlayer.id,
         nickname: nicknameController.text.trim(),
@@ -42,10 +41,8 @@ class UpdatePlayerButton extends StatelessWidget {
         createdAt: originalPlayer.createdAt, // Keep original creation date
       );
 
-      // Update player in service
       PlayerService().updatePlayer(updatedPlayer);
 
-      // Show success message
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
           content: Text('Player updated successfully!'),
@@ -54,7 +51,6 @@ class UpdatePlayerButton extends StatelessWidget {
         ),
       );
 
-      // Navigate back to previous screen
       Navigator.of(context).pop(true); // Return true to indicate success
     }
   }

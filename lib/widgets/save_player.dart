@@ -65,7 +65,6 @@ class SavePlayerButton extends StatelessWidget {
       
       print('Navigating back...'); // Debug print
       
-      // Navigate back to all players screen with a result
       Navigator.pop(context, true);
     } else {
       print('Form validation failed!'); // Debug print
